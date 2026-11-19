@@ -1,0 +1,127 @@
+[gd_scene load_steps=2 format=3 uid="uid://lunkerrushfishing"]
+
+[ext_resource type="Script" path="res://scripts/fishing.gd" id="1"]
+
+[node name="Fishing" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Water" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_top = 320.0
+color = Color(0.09, 0.42, 0.66, 1)
+
+[node name="Sky" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+offset_bottom = 320.0
+color = Color(0.55, 0.82, 0.95, 1)
+
+[node name="Shoreline" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+offset_top = 300.0
+offset_bottom = 330.0
+color = Color(0.35, 0.62, 0.32, 1)
+
+[node name="FishLayer" type="Node2D" parent="."]
+
+[node name="Bobber" type="ColorRect" parent="."]
+visible = false
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(1, 0.42, 0.29, 1)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="LakeLabel" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 400.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 28
+text = "Higgins Lake"
+
+[node name="CoinsLabel" type="Label" parent="HUD"]
+offset_left = 480.0
+offset_top = 12.0
+offset_right = 704.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 28
+text = "Coins: 0"
+
+[node name="WeatherLabel" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 52.0
+offset_right = 400.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 22
+text = "Sunny"
+
+[node name="CastHint" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 1200.0
+offset_right = 260.0
+offset_bottom = 1240.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "Tap-drag on the water to aim, release to cast"
+
+[node name="TensionLabel" type="Label" parent="HUD"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 1020.0
+offset_right = 200.0
+offset_bottom = 1052.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "TENSION — tap to reel!"
+
+[node name="TensionBar" type="ProgressBar" parent="HUD"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 1060.0
+offset_right = 260.0
+offset_bottom = 1100.0
+grow_horizontal = 2
+max_value = 100.0
+show_percentage = false
+
+[node name="DroneButton" type="Button" parent="HUD"]
+offset_left = 16.0
+offset_top = 1080.0
+offset_right = 216.0
+offset_bottom = 1160.0
+theme_override_font_sizes/font_size = 24
+text = "Scout Drone"
+
+[node name="MessageLabel" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 340.0
+offset_right = 300.0
+offset_bottom = 380.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+text = ""
